@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { plantList } from "../Data/planteData";
 import "../style/ShoppingList.css";
-import CareScale from './CareScale';
+// import CareScale from './CareScale';
+import PlantItem from "./PlanItem"
+
+
 
 const formStyle = {
   width: "100%",
@@ -72,24 +75,15 @@ function ShoppingList() {
       </form>
 
       <ul className="lmj-plant-list">
-        {filteredPlants.map((plant) => (
-          <li key={plant.id} className="lmj-plant-item">
-            {plant.name}
-            {plant.isSpecialOffer && (
-              <span
-                style={{
-                  fontWeight: "500",
-                  marginLeft: "10px",
-                  padding: "2px",
-                  backgroundColor: "yellow",
-                }}
-              >
-                Soldes
-              </span>
-            )}
-            <CareScale careType='water' scaleValue={plant.water} />
-						<CareScale careType='light' scaleValue={plant.light} />
-          </li>
+        {filteredPlants.map(({ id, cover, name, water, light }) => (
+          <PlantItem
+          id={id}
+          cover={cover}
+          name={name}
+          water={water}
+          light={light}
+        />
+        
         ))}
       </ul>
     </div>

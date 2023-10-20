@@ -1,16 +1,18 @@
-function CareScale({ scaleValue, careType }) {
-	const range = [1, 2, 3]
-	const scaleType = careType === 'light' ? '☀️' : '💧'
+import { nanoid } from "nanoid";
 
-	return (
-		<div>
-			{range.map((rangeElem) =>
-				scaleValue >= rangeElem ? (
-					<span key={rangeElem.toString()}>{scaleType}</span>
-				) : null
-			)}
-		</div>
-	)
+function CareScale({ scaleValue, careType }) {
+  const range = [1, 2, 3, 4];
+  const scaleType = careType === "light" ? "☀️" : "💧";
+
+  return (
+    <div>
+      {range.map((rangeElem) => {
+        return scaleValue >= rangeElem ? (
+          <span key={nanoid(10)}>{scaleType}</span>
+        ) : null;
+      })}
+    </div>
+  );
 }
 
-export default CareScale
+export default CareScale;
