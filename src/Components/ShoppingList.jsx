@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { plantList } from "../Data/planteData";
+import "../style/ShoppingList.css";
+import CareScale from './CareScale';
 
 const formStyle = {
   width: "100%",
@@ -44,7 +46,14 @@ function ShoppingList() {
   });
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", alignItems:"center",  flexDirection: "column", width: "100%" }}>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
+        width: "100%",
+      }}
+    >
       <form name="form1" action="" method="get" style={formStyle}>
         <label htmlFor="listeSelection">Sélectionnez une catégorie :</label>
         <select
@@ -55,7 +64,9 @@ function ShoppingList() {
           style={selectStyle}
         >
           {categories.map((cat) => (
-            <option key={cat} value={cat}>{cat}</option>
+            <option key={cat} value={cat}>
+              {cat}
+            </option>
           ))}
         </select>
       </form>
@@ -76,6 +87,8 @@ function ShoppingList() {
                 Soldes
               </span>
             )}
+            <CareScale careType='water' scaleValue={plant.water} />
+						<CareScale careType='light' scaleValue={plant.light} />
           </li>
         ))}
       </ul>

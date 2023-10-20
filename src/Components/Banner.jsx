@@ -7,7 +7,7 @@ export default function Banner() {
 
   return (
     <div className="lmj-banner">
-      <h1 className="lmj-banner"> {title}</h1>;
+      <h1 className="lmj-banner"> {title}</h1>
       <img src={logo} alt="la maison jungle" className="lmg-logo" />
     </div>
   );
