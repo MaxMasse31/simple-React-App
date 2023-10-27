@@ -5,6 +5,7 @@ import ShoppingList from "./Components/ShoppingList";
 import "./style/Banner.css";
 import logo from "./assets/leaf+1.png";
 import "./style/Layout.css"
+import Footer from "./Components/Footer"
 
 function App() {
 	return (
@@ -17,7 +18,7 @@ function App() {
 				<Cart />
 				<ShoppingList />
 			</div>
-			{/* <Footer /> */}
+			<Footer />
 		</div>
 	)
 }

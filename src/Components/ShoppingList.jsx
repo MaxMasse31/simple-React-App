@@ -9,6 +9,7 @@ import PlantItem from "./PlanItem"
 const formStyle = {
   width: "100%",
   maxWidth: "500px",
+  marginTop: "30px",
   padding: "10px",
   border: "1px solid #ccc",
   borderRadius: "5px",
