@@ -6,6 +6,7 @@ import "./style/Banner.css";
 import logo from "./assets/leaf+1.png";
 import "./style/Layout.css";
 import Footer from "./Components/Footer";
+import { useState } from "react";
 
 function App() {
   const [cart, updateCart] = useState([]);
